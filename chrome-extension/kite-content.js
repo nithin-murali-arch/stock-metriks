@@ -5,7 +5,6 @@ if(navBar){
     var checkHoldingsExist = setInterval(function() {
         let tbody = document.querySelector('.data-table table tbody');
         if (tbody && tbody.length) {
-
            collectData(tbody);
            clearInterval(checkHoldingsExist);
         }
