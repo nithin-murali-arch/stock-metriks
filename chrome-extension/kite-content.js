@@ -21,7 +21,7 @@ function collectData(tbody){
         obj.avgPrice = children[2].innerHTML.replace(/<(?:.|\n)*?>/gm, '').replace(/\s/g, '');
         processedData.push(obj);
     }
-    console.log(processedData);
+    pushToServer(processedData);
 }
 
 init();

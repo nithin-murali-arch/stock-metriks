@@ -25,3 +25,9 @@ function waitForElement(selector, callback, errCallback, maxRetries){
         }
      }, 100);
 }
+
+function pushToServer(data){
+    //TODO STUB
+    console.log(data);
+    
+}
