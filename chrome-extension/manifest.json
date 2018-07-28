@@ -3,18 +3,18 @@
     "name": "Kite Extension",
     "version": "1.0.0",
     "content_scripts": [
-        {
+        { 
           "matches": [
-            "kite.zerodha.com",
-            "kite3.zerodha.com"
+            "https://kite.zerodha.com/holdings",
+            "https://kite3.zerodha.com/holdings"
           ],
-          "js": ["kite-content.js"]
+          "js": ["utils/utils.js", "kite-content.js"]
         },
         {
           "matches": [
-            "<!Replace with angel url>"
+            "https://angelurl/*"
           ],
-          "js": ["angel-content.js"]
+          "js": ["utils/utils.js", "angel-content.js"]
         }
       ]
   }
