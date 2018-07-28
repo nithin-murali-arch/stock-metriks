@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Kite Extension",
+    "version": "1.0.0",
+    "content_scripts": [
+        {
+          "matches": [
+            "kite.zerodha.com",
+            "kite3.zerodha.com"
+          ],
+          "js": ["kite-content.js"]
+        },
+        {
+          "matches": [
+            "<!Replace with angel url>"
+          ],
+          "js": ["angel-content.js"]
+        }
+      ]
+  }
