@@ -1,0 +1,9 @@
+{
+    "mongodb": {
+        "connectionString": "mongodb://localhost:27017/metriks"
+    },
+    "redis":{
+        "host": "localhost",
+        "port": "6379"
+    }
+}

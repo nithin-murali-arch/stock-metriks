@@ -1,18 +1,15 @@
 
-function init(){
-    // waitForElement('.app-nav', function(navBar){
-    //     navBar.children[2].click();
-        waitForElement('.data-table table tbody', function(tbody){
-            if (tbody && tbody.children.length) {
-                collectData(tbody);
-             }
-        });
-    // });
+StockMetrics.init = function () {
+    StockMetrics.utils.waitForElement('.data-table table tbody', function (tbody) {
+        if (tbody && tbody.children.length) {
+            StockMetrics.collectData(tbody);
+        }
+    });
 }
 
-function collectData(tbody){
+StockMetrics.collectData = function (tbody) {
     let processedData = [];
-    for(let i = 0; i < tbody.children.length; i++){
+    for (let i = 0; i < tbody.children.length; i++) {
         let item = tbody.children[i];
         let obj = {};
         let children = item.children;
@@ -21,7 +18,8 @@ function collectData(tbody){
         obj.avgPrice = children[2].innerHTML.replace(/<(?:.|\n)*?>/gm, '').replace(/\s/g, '');
         processedData.push(obj);
     }
-    pushToServer(processedData);
+    StockMetrics.utils.pushToServer(processedData);
 }
 
-init();
+StockMetrics.init();
+StockMetrics.utils.showLoginPopup();

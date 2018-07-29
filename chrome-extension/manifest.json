@@ -2,13 +2,17 @@
     "manifest_version": 2,
     "name": "Kite Extension",
     "version": "1.0.0",
+    "permissions": [
+      "storage"
+    ],
     "content_scripts": [
         { 
           "matches": [
             "https://kite.zerodha.com/holdings",
             "https://kite3.zerodha.com/holdings"
           ],
-          "js": ["utils/utils.js", "kite-content.js"]
+          "css": ["utils/popup.css"],
+          "js": ["tp/jquery.min.js", "utils/utils.js", "kite-content.js"]
         },
         {
           "matches": [
