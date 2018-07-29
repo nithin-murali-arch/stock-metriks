@@ -16,7 +16,7 @@ var dematSchema: Schema = new Schema({
 export var userSchema: Schema = new Schema({
     createdTime: Date,
     lastUpdatedTime: Date,
-    email: String,
+    email: {type: String, unique: true},
     password: String,
     demat: [dematSchema]
   });

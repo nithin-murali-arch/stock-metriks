@@ -1,0 +1,34 @@
+<html>
+<head>
+    <link rel="stylesheet" href="popup.css">
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class='stock-metriks-container'>
+        <div class="popup">
+            <div class="login-page">
+                <div class="form">
+                    <h2>Stock Metriks</h2>
+                    <form class="register-form">
+                        <input id="stk-met-user" type="text" placeholder="Email address" />
+                        <input id="stk-met-pass" type="password" placeholder="password" />
+                        <button onclick="StockMetrics.utils.createUser()">Create</button>
+                        <p class="message">Already registered?
+                            <a href="#">Sign In</a>
+                        </p>
+                    </form>
+                    <form class="login-form">
+                        <input id="stk-met-user" type="text" placeholder="username" />
+                        <input id="stk-met-pass" type="password" placeholder="password" />
+                        <button onclick="StockMetrics.utils.login()">Login</button>
+                        <p class="message">Not registered?
+                            <a href="#">Create an account</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="popup.js"></script>
+</html>

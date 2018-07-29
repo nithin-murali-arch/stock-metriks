@@ -5,14 +5,16 @@
     "permissions": [
       "storage"
     ],
+    "browser_action": {
+      "default_popup": "utils/popup/popup.html"
+    },
     "content_scripts": [
         { 
           "matches": [
             "https://kite.zerodha.com/holdings",
             "https://kite3.zerodha.com/holdings"
           ],
-          "css": ["utils/popup.css"],
-          "js": ["tp/jquery.min.js", "utils/utils.js", "kite-content.js"]
+          "js": ["utils/utils.js", "kite-content.js"]
         },
         {
           "matches": [

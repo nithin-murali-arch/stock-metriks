@@ -1,6 +1,6 @@
 import * as express from 'express';
 import chromeExtension from './routes/chrome-extension';
-
+const bodyParser = require('body-parser');
 
 let app = express();
 
