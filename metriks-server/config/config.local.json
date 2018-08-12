@@ -1,6 +1,6 @@
 {
     "mongodb": {
-        "connectionString": "mongodb://localhost:27017/metriks"
+        "connectionString": "mongodb://admin:admin@localhost:27017/metriks"
     },
     "redis":{
         "host": "localhost",

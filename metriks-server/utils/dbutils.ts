@@ -2,11 +2,11 @@ import mongoose = require("mongoose");
 //interfaces
 import { IUser } from "../interfaces/user"; //import IUser
 //models
-import { IModel } from "../models/model"; //import IModel
+// import { IModel } from "../models/model"; //import IModel
 import { IUserModel } from "../models/user"; //import IUserModel
 //schemas
 import { userSchema } from "../schemas/user"; //import userSchema
-import { resolve } from "path";
+// import { resolve } from "path";
 
 const config = require('../config/config');
 
@@ -38,11 +38,26 @@ export default class MongooseConnection{
     }
 
     loginUser(username:string, password: string){
-        //TODO
+        let queryObj:any = {
+            emailid: username
+        };
+        if(password){
+            queryObj.password = password;
+        }
+        return new Promise((resolve, reject) => {
+            this.User.findOne(queryObj, function(err:any, user:IUserModel){
+                if(err){
+                    reject(err)
+                }
+                else{
+                    resolve(user);
+                }
+            });
+        });
     }
 
-    fetchUserInfo(username){
-        //TODO
+    fetchUserInfo(username:string){
+        return this.loginUser(username, '');
     }
 
 
